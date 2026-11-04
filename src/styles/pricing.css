@@ -1,0 +1,180 @@
+/* =======================================================
+   SIT313 D1 ADDITIONS
+   Original P5 styles remain untouched in index.css.
+   Simple black/white + forest-green accents; no gradients.
+   ======================================================= */
+.site-nav .nav-pricing {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 37px;
+  padding: 0 12px;
+  color: #f0f2f5;
+  border: 1px solid #49504e;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.site-nav .nav-pricing:hover,
+.site-nav .nav-pricing.is-current { color: #fff; background: #283e35; border-color: #5c8673; opacity: 1; }
+.nav-plan-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 31px;
+  padding: 0 10px;
+  border: 1px solid #47534e;
+  border-radius: 100px;
+  color: #e4e9e7;
+  background: #243029;
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.nav-plan-badge.is-paid { border-color: #a4c9ad; color: #ddf6e2; background: #234932; }
+
+.d1-pricing-page, .d1-posts-page {
+  min-height: calc(100vh - 125px);
+  background: #f6f7f5;
+  color: #1b2720;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.d1-pricing-container, .d1-posts-container { max-width: 1152px; margin: 0 auto; padding: 72px 30px 86px; }
+.d1-pricing-page h1, .d1-pricing-page h2, .d1-posts-page h1, .d1-posts-page h2 { letter-spacing: -1px; }
+.d1-pricing-page button, .d1-pricing-page input, .d1-posts-page button, .d1-posts-page input, .d1-posts-page textarea { font-family: inherit; }
+.d1-pricing-header { text-align: center; max-width: 750px; margin: 0 auto 47px; }
+.d1-kicker { display: inline-flex; align-items: center; gap: 10px; padding: 9px 14px; border: 1px solid #dbe5db; border-radius: 100px; background: #fff; color: #375e45; font-size: 10px; font-weight: 800; letter-spacing: 1.4px; }
+.d1-kicker-dot { width: 7px; height: 7px; border-radius: 50%; background: #3e7b55; }
+.d1-pricing-header h1 { margin: 24px 0 15px; font-size: clamp(39px, 5.4vw, 68px); font-weight: 800; line-height: 1.08; letter-spacing: -2.8px; }
+.d1-pricing-header em, .d1-posts-page h1 em { font-style: normal; color: #357049; }
+.d1-pricing-header > p { max-width: 530px; margin: 0 auto; color: #68776c; font-size: 15px; line-height: 1.85; }
+.d1-account-strip { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 0 0 34px; padding: 17px 22px; border: 1px solid #e0e7e0; border-radius: 12px; background: #fff; }
+.d1-account-identity { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.d1-account-icon { display: grid; flex-shrink: 0; place-items: center; width: 40px; height: 40px; background: #edf4ee; color: #275b39; border-radius: 100px; font-size: 17px; font-weight: 800; }
+.d1-account-identity strong, .d1-account-identity span:not(.d1-account-icon) { display: block; }
+.d1-account-identity strong { font-size: 13px; line-height: 1.4; }
+.d1-account-identity div > span { margin-top: 2px; color: #718076; font-size: 11px; overflow-wrap: anywhere; }
+.d1-account-plan { flex-shrink: 0; padding: 7px 14px; background: #edf0ed; color: #506154; border-radius: 100px; font-size: 11px; font-weight: 800; }
+.d1-account-plan.is-paid { background: #e0efe3; color: #21643a; }
+.d1-pricing-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
+.d1-plan-card { display: flex; flex-direction: column; position: relative; min-width: 0; padding: 36px 39px 30px; border: 1px solid #dfe5de; border-radius: 17px; background: #fff; box-shadow: 0 9px 35px rgba(31,50,34,.04); }
+.d1-plan-card.d1-selected-plan { outline: 2px solid #5f9f72; outline-offset: -2px; }
+.d1-plan-featured { background: #f2f7f1; border: 1px solid #bfd9c5; }
+.d1-featured-banner { display: flex; gap: 9px; align-items: center; margin: -11px 0 20px; color: #356d46; font-size: 10px; font-weight: 800; letter-spacing: 1.65px; }
+.d1-featured-banner span { font-size: 19px; }
+.d1-plan-label, .d1-eyebrow { margin: 0 0 9px; color: #62816c; font-size: 10px; font-weight: 800; letter-spacing: 1.5px; }
+.d1-plan-card h2 { display: flex; align-items: center; gap: 11px; margin: 0 0 10px; font-size: 35px; line-height: 1.2; color: #182c20; }
+.d1-premium-tag { display: inline-flex; align-items: center; justify-content: center; padding: 4px 8px; color: #fff; background: #265839; border-radius: 4px; font-size: 10px; font-weight: 800; letter-spacing: .7px; }
+.d1-plan-summary { margin: 0 0 27px; font-size: 13px; line-height: 1.7; color: #6c7a6e; }
+.d1-plan-price { display: flex; align-items: baseline; gap: 8px; margin: 0; padding-bottom: 30px; border-bottom: 1px solid #e0e8df; }
+.d1-plan-price span { font-size: clamp(41px, 4.4vw, 53px); letter-spacing: -2px; line-height: 1.1; font-weight: 800; }
+.d1-plan-price small { font-size: 12px; color: #758276; }
+.d1-feature-list { display: grid; gap: 19px; margin: 31px 0 38px; padding: 0; list-style: none; }
+.d1-feature-list li { display: flex; align-items: center; gap: 12px; color: #304436; font-size: 13px; font-weight: 650; }
+.d1-feature-list li.not-included { color: #9aa69c; }
+.d1-feature-icon { display: flex; align-items: center; justify-content: center; flex: 0 0 25px; width: 25px; height: 25px; border-radius: 100px; background: #e2f0e4; color: #276e3d; font-size: 13px; font-weight: 900; }
+.d1-feature-list li.not-included .d1-feature-icon { background: #f0f1f0; color: #a3aea6; }
+.d1-plan-cta { margin-top: auto; }
+.d1-button { display: flex; justify-content: center; align-items: center; gap: 13px; width: 100%; min-height: 48px; padding: 10px 17px; border-radius: 8px; font-size: 12px; font-weight: 800; text-align: center; cursor: pointer; text-decoration: none; transition: background .18s ease, transform .18s ease, border-color .18s ease; }
+.d1-button:not(:disabled):hover { transform: translateY(-1px); }
+.d1-button-primary { color: #fff; border: 1px solid #275b38; background: #275b38; }
+.d1-button-primary:not(:disabled):hover { background: #1b492b; }
+.d1-button-outline { color: #284635; background: transparent; border: 1px solid #b2c9ba; }
+.d1-button-outline:not(:disabled):hover { background: #edf4ee; }
+.d1-button:disabled { cursor: not-allowed; opacity: .8; }
+.d1-button.is-current-plan { color: #215336; background: #dceee0; border-color: #a9d0b2; }
+.d1-plan-cta > p { margin: 13px 0 0; color: #8a978d; font-size: 10px; text-align: center; line-height: 1.6; }
+.d1-pricing-footer-note { display: flex; justify-content: center; align-items: flex-start; gap: 11px; max-width: 760px; margin: 25px auto 72px; color: #78847a; }
+.d1-pricing-footer-note > span { flex-shrink: 0; font-size: 17px; }
+.d1-pricing-footer-note p { margin: 0; font-size: 11px; line-height: 1.75; }
+.d1-pricing-bottom { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 56px; padding: 33px 40px; border: 1px solid #e3e9e1; border-radius: 12px; background: #fff; }
+.d1-pricing-bottom h2 { margin: 0; max-width: 350px; color: #1f3124; font-size: clamp(23px, 3.1vw, 31px); line-height: 1.25; }
+.d1-pricing-bottom > p { margin: 0; color: #6e7c70; font-size: 13px; line-height: 1.9; }
+.d1-success-banner, .d1-banner-error { margin: 0 0 22px; padding: 14px 17px; font-size: 12px; line-height: 1.7; border-radius: 8px; }
+.d1-success-banner { border: 1px solid #b8d8bd; color: #265e37; background: #e9f5ea; }
+.d1-success-banner > span { margin-right: 6px; font-weight: 900; }
+.d1-banner-error { border: 1px solid #edcaca; color: #8d3333; background: #fff3f3; }
+
+/* D1 modal: accessible dialog, focus containment and mobile-friendly form. */
+.d1-modal-backdrop { position: fixed; z-index: 9999; inset: 0; display: grid; place-items: center; padding: 24px; background: rgba(13, 23, 17, .65); overflow-y: auto; }
+.d1-modal { width: min(100%, 490px); max-height: calc(100vh - 48px); overflow-y: auto; padding: 30px; border: 1px solid #dbe6da; border-radius: 16px; background: #fff; box-shadow: 0 23px 76px rgba(0,0,0,.21); }
+.d1-modal-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 18px; }
+.d1-modal h2 { margin: 0; font-size: 26px; color: #1f3425; }
+.d1-close { display: grid; place-items: center; flex: 0 0 32px; width: 32px; height: 32px; border: 1px solid #e2e9e3; border-radius: 100%; background: #f7f8f7; font-size: 22px; color: #42594a; cursor: pointer; }
+.d1-modal-lead { margin: 11px 0 19px; color: #6b7c6e; font-size: 12px; line-height: 1.7; }
+.d1-demo-warning { padding: 12px 14px; margin-bottom: 21px; border: 1px solid #ebdfb4; border-radius: 8px; background: #fdf9e9; color: #6c5c28; font-size: 11px; line-height: 1.6; }
+.d1-demo-warning strong { display: block; margin-bottom: 2px; }
+.d1-payment-form { display: grid; gap: 9px; }
+.d1-payment-form label, .d1-posts-editor label { font-weight: 800; font-size: 11px; color: #314838; }
+.d1-payment-form input, .d1-posts-editor input, .d1-posts-editor textarea { display: block; width: 100%; min-width: 0; height: 44px; padding: 10px 12px; margin: 0 0 11px; border: 1px solid #d2ded2; border-radius: 7px; background: #fcfdfc; color: #1a2f21; font-size: 13px; outline: none; }
+.d1-posts-editor textarea { height: auto; resize: vertical; line-height: 1.5; }
+.d1-payment-form input:focus, .d1-posts-editor input:focus, .d1-posts-editor textarea:focus { border-color: #52805f; box-shadow: 0 0 0 3px #e5f0e6; }
+.d1-payment-form input::placeholder, .d1-posts-editor input::placeholder, .d1-posts-editor textarea::placeholder { color: #a5b2a7; }
+.d1-form-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.d1-form-columns > div { min-width: 0; }
+.d1-form-columns label { display: block; margin-bottom: 9px; }
+.d1-form-error { margin: 0; padding: 10px 12px; color: #8d3333; background: #fff1f1; border: 1px solid #edcaca; border-radius: 7px; font-size: 11px; }
+.d1-confirm { margin-top: 3px; }
+.d1-fine-print { margin: 4px 0 0; text-align: center; color: #87968a; font-size: 10px; line-height: 1.7; }
+
+/* Optional lightweight Post page upgrades the old P5 placeholder. */
+.d1-posts-page h1 { margin: 0 0 14px; font-size: clamp(35px, 4.9vw, 56px); line-height: 1.1; letter-spacing: -1.8px; }
+.d1-posts-intro { margin: 0 0 33px; max-width: 670px; color: #718173; font-size: 14px; line-height: 1.8; }
+.d1-posts-grid { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); align-items: start; gap: 22px; }
+.d1-posts-grid section { width: auto; max-width: none; margin: 0; padding: 28px; border: 1px solid #e0e8de; border-radius: 14px; background: #fff; }
+.d1-posts-grid h2 { margin: 0 0 24px; color: #1b3122; font-size: 22px; }
+.d1-posts-editor form { display: grid; gap: 11px; }
+.d1-editor-bottom { display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+.d1-editor-bottom small { color: #849387; font-size: 11px; }
+.d1-editor-bottom .d1-button { width: auto; min-width: 150px; }
+.d1-posts-editor .d1-success-banner, .d1-posts-editor .d1-banner-error { margin: 18px 0 0; }
+.d1-posts-auth p { font-size: 13px; color: #758477; }
+.d1-posts-auth .d1-button { max-width: 240px; }
+.d1-posts-feed-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.d1-posts-feed-header > span { border-radius: 100px; background: #edf4ef; padding: 5px 10px; color: #50735a; font-size: 11px; font-weight: 800; }
+.d1-empty-posts { padding: 28px 0; color: #778477; font-size: 13px; }
+.d1-post-item { padding: 21px 0; border-top: 1px solid #e7eee6; }
+.d1-post-meta { display: flex; justify-content: space-between; gap: 14px; color: #708471; font-size: 10px; }
+.d1-post-meta > span { font-weight: 800; }
+.d1-post-item h3 { margin: 9px 0 7px; font-size: 17px; }
+.d1-post-item p { margin: 0; font-size: 12px; line-height: 1.8; white-space: pre-wrap; overflow-wrap: anywhere; color: #57665a; }
+
+@media (max-width: 950px) {
+  .d1-plan-card { padding: 30px 27px 26px; }
+  .d1-pricing-container, .d1-posts-container { padding: 52px 23px 65px; }
+  .d1-posts-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 690px) {
+  .d1-pricing-grid, .d1-pricing-bottom { grid-template-columns: 1fr; }
+  .d1-pricing-bottom { gap: 15px; padding: 29px; }
+  .d1-pricing-header h1 { letter-spacing: -1.5px; }
+  .d1-pricing-header { margin-bottom: 27px; }
+  .d1-pricing-container, .d1-posts-container { padding: 37px 16px 55px; }
+  .d1-plan-card { padding: 32px 27px 27px; }
+  .d1-pricing-footer-note { margin-bottom: 47px; }
+  .d1-account-strip { padding: 13px 14px; }
+}
+@media (max-width: 560px) {
+  .site-nav .nav-pricing { min-height: 35px; height: auto; padding: 0 8px; font-size: 11px; }
+  .site-nav .nav-plan-badge { min-height: 35px; padding: 0 8px; border-radius: 7px; font-size: 10px; }
+  .d1-pricing-header > p { font-size: 13px; }
+  .d1-modal-backdrop { padding: 9px; }
+  .d1-modal { padding: 23px 19px; max-height: calc(100vh - 18px); }
+  .d1-account-plan { padding: 6px 9px; font-size: 10px; }
+  .d1-posts-grid section { padding: 21px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .d1-button { transition: none; }
+  .d1-button:not(:disabled):hover { transform: none; }
+}
+
+/* Keep P5 mobile grid, but place the new D1 actions in a tidy order. */
+@media (max-width: 560px) {
+  .site-nav .nav-pricing, .site-nav .nav-post,
+  .site-nav .nav-login, .site-nav .nav-register, .site-nav .nav-plan-badge {
+    width: 100%; min-width: 0; text-align: center;
+  }
+  .site-nav .nav-pricing { padding: 7px 8px; }
+  .site-nav .nav-plan-badge { padding: 7px 8px; }
+}

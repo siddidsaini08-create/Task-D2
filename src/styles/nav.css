@@ -1,0 +1,17 @@
+/* The shared C2/D1/D2 navigation has one menu on small screens. */
+.site-nav .nav-browse { display: inline-flex; justify-content: center; align-items: center; min-height: 42px; padding: 0 12px; background: transparent; border: 1px solid #50585c; border-radius: 8px; color: #fff; font-size: 13px; font-weight: 700; white-space: nowrap; }
+.site-nav .nav-browse:hover, .site-nav .nav-browse[aria-current="page"] { background: #283e35; opacity: 1; }
+.site-nav .nav-plan-badge { font-size: 11px; flex-shrink: 0; }
+.site-nav .nav-pricing { min-height: 42px; height: 42px; font-size: 13px; }
+.nav-menu-toggle { font-family: inherit; }
+@media (max-width: 1250px) {
+  .site-nav .nav-actions { display: grid; width: 100%; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
+  .site-nav .nav-post, .site-nav .nav-browse, .site-nav .nav-pricing, .site-nav .nav-login, .site-nav .nav-register, .site-nav .nav-logout, .site-nav .nav-plan-badge { width: 100%; min-width: 0; padding: 10px 8px; text-align: center; }
+  .site-nav .nav-plan-badge { min-height: 42px; border-radius: 8px; }
+}
+@media (max-width: 600px) {
+  .site-nav .nav-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .site-nav .nav-browse, .site-nav .nav-pricing, .site-nav .nav-login, .site-nav .nav-register, .site-nav .nav-post { font-size: 13px; }
+}
+html, body, #root { min-width: 0; }
+#root { overflow-x: clip; }

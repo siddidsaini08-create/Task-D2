@@ -1,0 +1,286 @@
+/* C2 layout adjustments shared by C2, D1 and D2 pages. */
+.site-nav .nav-post,
+.site-nav .nav-login,
+.site-nav .nav-register,
+.site-nav .nav-logout {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.site-nav .nav-post { border: 1px solid #676a73; background: transparent; color: #fff; }
+.site-nav .nav-login { border: 1px solid #676a73; background: transparent; color: #fff; }
+.site-nav .nav-register { border: 1px solid #fff; background: #fff; color: #111; }
+.site-nav .nav-logout { border: 1px solid #676a73; background: transparent; color: #fff; cursor: pointer; }
+.site-nav .nav-logout:hover { background: #292c33; }
+.site-nav .nav-back-home { font-size: 13px; }
+.site-nav .nav-section-links a { font-size: 13px; }
+.nav-error { background: #fff4f4; color: #8d2727; padding: 7px 20px; text-align: center; font-size: 13px; }
+
+/* Google sign-in uses the same visual weight as the email button. */
+.google-signin-button {
+  display: flex;
+  width: 100%;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 1px solid #cfd3db;
+  border-radius: 8px;
+  background: #fff;
+  color: #1c1e24;
+  font: 700 14px/1.2 Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  transition: background .15s ease, border-color .15s ease;
+}
+.google-signin-button:hover:not(:disabled) { background: #f7f8fa; border-color: #8d939f; }
+.google-signin-button:focus-visible,
+.site-nav a:focus-visible, .site-nav button:focus-visible,
+.auth-form button:focus-visible, .auth-form input:focus-visible {
+  outline: 3px solid #8e9aa9;
+  outline-offset: 2px;
+}
+.google-signin-button:disabled, .auth-submit:disabled { opacity: .65; cursor: not-allowed; }
+.auth-switch-after-google { margin-top: 22px; }
+.register-card .auth-divider { margin: 22px 0 18px; }
+.register-card .auth-switch { margin-top: 20px; }
+.auth-form label { font-size: 13px; }
+.auth-form input { font-size: 14px; }
+.auth-submit { font-size: 14px; min-height: 48px; }
+.text-button, .password-toggle { font-size: 12px; }
+.auth-card-heading > p:last-child { font-size: 14px; }
+.auth-switch { font-size: 13px; }
+.auth-feedback { font-size: 13px; }
+.auth-legal { font-size: 11px; }
+.password-strength small { font-size: 11px; }
+
+/* C2 core Articles/Tutorials section */
+.tutorials-heading { margin-bottom: 25px; }
+.tutorials-heading .gallery-eyebrow { margin-bottom: 7px; }
+.tutorials-heading h2 { margin-bottom: 10px; }
+.tutorials-heading > p:last-child { margin: 0; color: var(--text-muted); }
+.tutorial-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.tutorial-card { display: flex; flex-direction: column; padding: 25px; border: 1px solid var(--border); border-radius: 14px; background: #fff; }
+.tutorial-category { color: #737b88; font-size: 11px; letter-spacing: 1.7px; font-weight: 800; }
+.tutorial-card h3 { margin: 12px 0 8px; font-size: 21px; line-height: 1.25; }
+.tutorial-card p { margin: 0 0 20px; color: #667085; font-size: 14px; line-height: 1.75; }
+.tutorial-card a { margin-top: auto; color: #17191e; text-decoration: underline; text-underline-offset: 3px; font-size: 13px; font-weight: 750; }
+
+@media (max-width: 900px) { .tutorial-grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) {
+  .site-nav .nav-post, .site-nav .nav-login, .site-nav .nav-register, .site-nav .nav-logout {
+    min-height: 39px; padding: 0 10px; font-size: 12px;
+  }
+  .site-nav .nav-logout { grid-column: span 2; }
+  .site-nav .nav-section-links a { font-size: 12px; }
+  .auth-form input { font-size: 14px; }
+  .auth-form label { font-size: 12px; }
+  .auth-name-grid label { font-size: 12px; }
+}
+
+
+/* C2 visual polish: preserve the monochrome design, standardize sizing and improve layouts. */
+:root {
+  --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+html { scroll-padding-top: 92px; }
+body { font-family: var(--font-ui); -webkit-font-smoothing: antialiased; }
+button, input, select, textarea { font-family: inherit; }
+button, a, input, textarea { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid #6c7584;
+  outline-offset: 3px;
+}
+h1, h2, h3 { text-wrap: balance; }
+p, li { overflow-wrap: break-word; }
+section[id] { scroll-margin-top: 92px; }
+
+/* One consistent type scale for navigation buttons and links. */
+.site-nav { min-height: 70px; gap: clamp(12px, 1.6vw, 24px); padding-block: 13px; }
+.site-nav .brand { font-family: var(--font-ui); font-size: 21px; line-height: 1.2; }
+.site-nav .nav-post,
+.site-nav .nav-login,
+.site-nav .nav-register,
+.site-nav .nav-logout {
+  min-height: 42px;
+  padding-inline: 14px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.site-nav .nav-back-home, .site-nav .nav-section-links a { font-size: 13px; font-weight: 600; }
+.nav-section-links { gap: clamp(11px, 1.15vw, 20px); }
+.nav-menu-content { display: contents; }
+.nav-menu-toggle { display: none; }
+
+/* Homepage spacing and content proportions. */
+section { width: 100%; padding: clamp(52px, 5.5vw, 80px) clamp(20px, 4vw, 44px); }
+section > h2, .gallery-heading h2, .tutorials-heading h2 {
+  font-size: clamp(26px, 2.8vw, 32px);
+  line-height: 1.2;
+  letter-spacing: -0.6px;
+}
+.banner { grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr) minmax(0, 1fr); gap: 16px; }
+.banner-name h1 { font-size: clamp(52px, 6vw, 90px); letter-spacing: .015em; line-height: .98; }
+.banner-name p { font-size: clamp(11px, 1.1vw, 15px); letter-spacing: clamp(1px, .24vw, 4px); line-height: 1.6; }
+.banner-contact { min-width: 0; overflow-wrap: anywhere; font-size: clamp(13px, 1.2vw, 16px); }
+.profile { grid-template-columns: minmax(0, 1fr) 250px; gap: clamp(24px, 5vw, 70px); }
+.profile p { font-size: 16px; line-height: 1.75; }
+.profile li { line-height: 1.65; }
+.project-grid, .gallery-grid, .tutorial-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.project-card { display: flex; flex-direction: column; min-width: 0; }
+.project-card-body { display: flex; flex: 1; flex-direction: column; padding: 22px; }
+.project-card-body h3 { font-size: 20px; line-height: 1.3; }
+.project-card-body p { font-size: 14px; line-height: 1.75; }
+.project-card-body a { margin-top: auto; padding-top: 14px; font-size: 14px; }
+.gallery-item figcaption { min-height: 112px; }
+.gallery-item h3 { font-size: 17px; line-height: 1.35; }
+.gallery-item p { font-size: 13px; }
+.tutorial-card { min-width: 0; padding: 23px; }
+.tutorial-card h3 { font-size: 20px; }
+.tutorial-card p, .tutorials-heading > p:last-child { font-size: 14px; line-height: 1.75; }
+.contact-card > p { overflow-wrap: anywhere; line-height: 1.9; }
+.contact-form input, .contact-form textarea, .subscribe-form input { min-width: 0; font-size: 15px; }
+.contact-form button, .subscribe-form button { font-size: 15px; }
+.contact-card, .subscribe-card { padding: clamp(22px, 3vw, 36px); }
+
+/* Log in / Create account - aligned text, form fields and call-to-action buttons. */
+.auth-aside h1 { letter-spacing: -.045em; }
+.auth-card-heading h2 { font-weight: 750; }
+.auth-overline, .auth-card-heading .eyebrow { font-size: 10px; line-height: 1.5; }
+.auth-form { gap: 11px; }
+.auth-form label, .auth-name-grid label { font-size: 13px; line-height: 1.4; }
+.auth-form input, .auth-name-grid input { min-height: 47px; font-size: 14px; }
+.auth-submit, .google-signin-button { min-height: 48px; font: 700 14px/1.25 var(--font-ui); }
+.auth-submit { padding-inline: 16px; }
+.auth-switch { line-height: 1.65; }
+.auth-legal { line-height: 1.7; }
+.password-strength small { line-height: 1.5; }
+
+/* New Post stays the same visual style with consistent text and touch targets. */
+.new-post-heading h1 { letter-spacing: -.04em; }
+.new-post-intro { font-size: 15px; }
+.post-type-option { font-size: 16px; }
+.post-field input, .post-field textarea { font-size: 16px; }
+.post-reset-button, .post-submit-button { min-height: 46px; }
+
+/* Tablet: two-column grids, clean vertical navigation. */
+@media (min-width: 701px) and (max-width: 1080px) {
+  .project-grid, .gallery-grid, .tutorial-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .profile { grid-template-columns: minmax(0, 1fr) 210px; gap: 24px; }
+  .profile-photo { width: 200px; height: 200px; font-size: 62px; }
+  .banner { grid-template-columns: minmax(0, 1fr); text-align: center; gap: 22px; padding-block: 55px; }
+  .banner-name { order: 1; }
+  .banner-contact { order: 2; }
+}
+
+/* At narrower widths, avoid wrapping the full navigation over multiple rows. */
+@media (max-width: 1250px) {
+  html { scroll-padding-top: 74px; }
+  section[id] { scroll-margin-top: 74px; }
+  .site-nav { display: flex; flex-wrap: wrap; min-height: 68px; justify-content: space-between; gap: 0; padding: 12px clamp(16px, 3vw, 30px); }
+  .site-nav .brand { font-size: 21px; }
+  .nav-menu-toggle {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    min-height: 44px; padding: 0 13px; border: 1px solid #565b65; border-radius: 8px;
+    background: transparent; color: #fff; font: 700 13px/1 var(--font-ui); cursor: pointer;
+  }
+  .nav-menu-toggle:hover { background: #25272c; }
+  .nav-toggle-icon { display: grid; place-items: center; }
+  .nav-toggle-icon svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+  .nav-menu-content { display: none; flex: 1 1 100%; width: 100%; min-width: 0; padding-top: 14px; }
+  .nav-menu-content.is-open { display: flex; flex-direction: column; gap: 14px; }
+  .nav-section-links { order: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; padding: 0; width: 100%; }
+  .site-nav .nav-section-links a, .site-nav .nav-back-home {
+    display: flex; align-items: center; justify-content: center; min-height: 42px;
+    padding: 8px 10px; border: 1px solid #363941; border-radius: 7px;
+    font-size: 13px; text-align: center;
+  }
+  .site-nav .nav-back-home { width: 100%; margin: 0; }
+  .nav-actions { order: 1; display: grid; grid-template-columns: minmax(0, 1fr) repeat(3, auto); align-items: center; gap: 8px; width: 100%; }
+  .site-nav .nav-post, .site-nav .nav-login, .site-nav .nav-register, .site-nav .nav-logout {
+    min-height: 44px; padding-inline: 16px; font-size: 13px;
+  }
+}
+
+@media (max-width: 700px) {
+  section { padding: 52px 20px; }
+  .banner { min-height: 360px; grid-template-columns: 1fr; gap: 20px; padding: 55px 20px; text-align: center; }
+  .banner-name { order: 1; }
+  .banner-contact { order: 2; }
+  .banner-name h1 { font-size: clamp(49px, 12vw, 73px); }
+  .banner-name p { margin-top: 21px; font-size: 12px; letter-spacing: 2px; }
+  .banner-greeting { font-size: 16px; }
+  .profile { grid-template-columns: 1fr; gap: 24px; }
+  .profile-photo { width: 190px; height: 190px; font-size: 58px; }
+  .project-grid, .gallery-grid, .tutorial-grid { grid-template-columns: 1fr; gap: 18px; }
+  .project-card > img, .gallery-item img { height: 210px; }
+  .project-card-body { padding: 20px; }
+  .gallery-item figcaption { min-height: 0; }
+  .gallery-heading { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .contact-form { grid-template-columns: 1fr; gap: 12px; }
+  .contact-form > * { grid-column: 1 / -1; }
+  .subscribe-form { grid-template-columns: 1fr; }
+  .subscribe-form button { width: 100%; }
+  .contact-card > p { font-size: 14px; }
+  .auth-page { padding: 20px 12px 34px; }
+  .auth-layout, .register-layout { grid-template-columns: minmax(0, 1fr); max-width: 550px; }
+  .auth-aside, .register-aside { min-height: 240px; padding: 28px; }
+  .auth-overline, .register-aside .auth-overline { margin-bottom: 22px; }
+  .auth-aside h1 { font-size: clamp(37px, 8vw, 52px); }
+  .auth-aside-copy { max-width: 370px; margin-top: 14px; font-size: 13px; line-height: 1.7; }
+  .auth-aside-bottom { padding-top: 22px; }
+  .auth-card, .register-card { padding: clamp(22px, 5vw, 34px); }
+  .auth-name-grid { gap: 12px; }
+  .new-post-page { padding: 30px 12px 46px; }
+  .new-post-heading h1 { font-size: clamp(38px, 9vw, 55px); }
+}
+
+@media (max-width: 520px) {
+  .site-nav { padding-inline: 14px; }
+  .site-nav .brand { font-size: 20px; }
+  .nav-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .site-nav .nav-post, .site-nav .nav-login, .site-nav .nav-register, .site-nav .nav-logout {
+    width: 100%; min-height: 44px; padding-inline: 9px; font-size: 13px;
+  }
+  .site-nav .nav-register { grid-column: 1 / -1; }
+  .site-nav .nav-logout { grid-column: auto; }
+  .nav-section-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .banner-name p { max-width: 100%; letter-spacing: 1.5px; }
+  .auth-name-grid { grid-template-columns: 1fr; gap: 11px; }
+  .auth-name-grid > div { gap: 7px; }
+  .auth-form input, .auth-name-grid input, .contact-form input, .contact-form textarea, .subscribe-form input { font-size: 16px; }
+  .auth-aside, .register-aside { padding: 26px 23px; }
+  .auth-card, .register-card { padding: 28px 20px; }
+  .auth-card-heading h2 { font-size: clamp(24px, 7vw, 29px); }
+  .auth-card-heading > p:last-child { font-size: 13px; }
+  .register-benefits { margin-top: 18px; gap: 9px; }
+  .register-benefits p { font-size: 12px; }
+  .auth-legal { font-size: 11px; }
+  .post-type-switch { gap: 10px; }
+  .post-type-option { font-size: 15px; }
+  .new-post-intro { font-size: 14px; }
+  .new-post-card-top, .new-post-form { padding-inline: 18px; }
+}
+
+@media (max-width: 355px) {
+  .site-nav .brand { font-size: 18px; }
+  .nav-menu-toggle { padding-inline: 10px; }
+  .banner-name h1 { font-size: 45px; }
+  section { padding-inline: 16px; }
+  .auth-aside h1 { font-size: 35px; }
+  .post-type-icon { width: 35px; flex-basis: 35px; height: 35px; }
+  .post-form-bottom { flex-wrap: wrap; }
+}

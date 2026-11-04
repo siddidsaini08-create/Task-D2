@@ -1,0 +1,33 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function owner(uid) { return signedIn() && request.auth.uid == uid; }
+
+    match /users/{uid} {
+      allow read: if owner(uid);
+      allow create: if owner(uid)
+        && request.resource.data.keys().hasOnly([
+          'uid', 'firstName', 'lastName', 'fullName', 'email',
+          'plan', 'createdAt', 'updatedAt'
+        ])
+        && request.resource.data.uid == uid
+        && request.resource.data.email == request.auth.token.email
+        && request.resource.data.plan == 'Free';
+      // Only migration of an old account missing a plan is allowed from React.
+      // New upgrades are performed using Firebase Admin on the backend.
+      allow update: if owner(uid)
+        && !('plan' in resource.data)
+        && request.resource.data.diff(resource.data).affectedKeys()
+          .hasOnly(['plan', 'updatedAt'])
+        && request.resource.data.plan == 'Free';
+      allow delete: if false;
+    }
+
+    match /posts/{postId} {
+      // D2: only Express + Firebase Admin may read or write posts.
+      // Prevent guest/free users from querying paid documents directly.
+      allow read, write: if false;
+    }
+  }
+}

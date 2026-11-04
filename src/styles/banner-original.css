@@ -1,0 +1,123 @@
+/* Exact banner styles from the original uploaded C2 project. */
+
+/* Keep this import last so new page styles do not change the homepage banner. */
+
+.banner {
+            position: relative;
+
+            min-height: 420px;
+            padding: 70px 8%;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: center;
+
+            background: #ffffff;
+            overflow: hidden;
+        }
+
+.banner-contact {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+.banner-contact p {
+            margin: 12px 0;
+        }
+
+.banner-name {
+            text-align: center;
+        }
+
+.banner-name h1 {
+            margin: 0;
+
+            font-size: clamp(55px, 7vw, 90px);
+            line-height: 0.95;
+            letter-spacing: 3px;
+            font-weight: 800;
+        }
+
+.banner-name p {
+            margin-top: 28px;
+
+            font-size: 15px;
+            letter-spacing: 5px;
+            color: var(--text-muted);
+        }
+
+.banner-greeting {
+            position: absolute;
+            bottom: -60px;
+            left: 0;
+            right: 0;
+
+            background: #111111;
+            color: white;
+
+            text-align: center;
+            padding: 18px;
+
+            font-size: 20px;
+            font-weight: 700;
+
+            transition: bottom 0.3s ease;
+        }
+
+.banner:hover .banner-greeting {
+            bottom: 0;
+        }
+
+@media (max-width: 800px) {
+  .banner {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 30px;
+            }
+  .banner-contact {
+                order: 2;
+            }
+  .banner-name {
+                order: 1;
+            }
+}
+
+@media (max-width: 560px) {
+  .banner {
+                padding: 60px 25px;
+            }
+  .banner-name h1 {
+                font-size: 55px;
+            }
+}
+
+.banner { grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr) minmax(0, 1fr); gap: 16px; }
+
+.banner-name h1 { font-size: clamp(52px, 6vw, 90px); letter-spacing: .015em; line-height: .98; }
+
+.banner-name p { font-size: clamp(11px, 1.1vw, 15px); letter-spacing: clamp(1px, .24vw, 4px); line-height: 1.6; }
+
+.banner-contact { min-width: 0; overflow-wrap: anywhere; font-size: clamp(13px, 1.2vw, 16px); }
+
+@media (min-width: 701px) and (max-width: 1080px) {
+  .banner { grid-template-columns: minmax(0, 1fr); text-align: center; gap: 22px; padding-block: 55px; }
+  .banner-name { order: 1; }
+  .banner-contact { order: 2; }
+}
+
+@media (max-width: 700px) {
+  .banner { min-height: 360px; grid-template-columns: 1fr; gap: 20px; padding: 55px 20px; text-align: center; }
+  .banner-name { order: 1; }
+  .banner-contact { order: 2; }
+  .banner-name h1 { font-size: clamp(49px, 12vw, 73px); }
+  .banner-name p { margin-top: 21px; font-size: 12px; letter-spacing: 2px; }
+  .banner-greeting { font-size: 16px; }
+}
+
+@media (max-width: 520px) {
+  .banner-name p { max-width: 100%; letter-spacing: 1.5px; }
+}
+
+@media (max-width: 355px) {
+  .banner-name h1 { font-size: 45px; }
+}

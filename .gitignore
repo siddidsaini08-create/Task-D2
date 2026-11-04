@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+npm-debug.log*
+.DS_Store
+
+# Firebase Admin credentials must NEVER be committed.
+serviceAccountKey.json
+*service-account*.json
+*serviceAccount*.json
+*.pem
